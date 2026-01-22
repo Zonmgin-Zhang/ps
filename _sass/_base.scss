@@ -154,6 +154,19 @@ blockquote {
   }
 }
 
+/*******************************************************************************
+ * About page section spacing
+ ******************************************************************************/
+
+.about-section-title {
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.about-section-title + .news {
+  margin-top: 0.15rem;
+}
+
 // Checklist
 
 ul.task-list {

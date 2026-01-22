@@ -6,10 +6,9 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Zongmin
 middle_name:
 last_name: Zhang
-contact_note: >
-  Email is the best way to reach me.
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Ph.D. Student in Data Science and Analytics. Research interests: Trustworthy AI (AI security & safety).
+  First-year Ph.D. student in Data Science and Analytics. Research interests: Trustworthy AI (AI security & safety).
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
