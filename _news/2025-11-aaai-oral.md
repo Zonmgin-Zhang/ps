@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-2025.11: Our paper 6DAttack has been accepted to 2026 AAAI Oral.
+:tada: Our paper 6DAttack has been accepted to 2026 AAAI Oral.
 

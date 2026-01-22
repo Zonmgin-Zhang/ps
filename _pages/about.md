@@ -6,7 +6,7 @@ subtitle: First-year Ph.D. Student · Trustworthy AI (Security & Safety)
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: WechatIMG197.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>HKUST (Guangzhou)</p>
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I am a first-year Ph.D. student in Data Science and Analytics at The Hong Kong University of Science and Technology (Guangzhou), advised by Prof. Xinlei He. My research focuses on Trustworthy AI, especially AI security and safety.
+Hello! I am a first-year Ph.D. student in Data Science and Analytics at The Hong Kong University of Science and Technology (Guangzhou), advised by **[Prof. Xinlei He](https://xinleihe.github.io/)**. My research focuses on Trustworthy AI, especially AI security and safety.
 
 Before that, I received my M.Sc. in Computer Science from City University of Hong Kong and my B.Sc. in Computer Science (Database Systems) from The University of New South Wales.
 

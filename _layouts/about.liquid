@@ -40,6 +40,13 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Social (move above News) -->
+    {% if page.social %}
+      <div class="social about-social">
+        <div class="contact-icons">{% social_links %}</div>
+      </div>
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2 class="about-section-title">News</h2>
@@ -61,16 +68,7 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
-        {% if site.contact_note != blank %}
-          <div class="contact-note">{{ site.contact_note }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+    {%- comment -%} Social icons moved above News. {%- endcomment -%}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}

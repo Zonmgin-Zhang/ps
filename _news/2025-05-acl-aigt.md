@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-2025.05: (AIGT detection) One paper got accepted in ACL 2025.
+:tada: One paper got accepted in ACL 2025.
 
