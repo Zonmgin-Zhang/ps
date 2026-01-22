@@ -180,8 +180,13 @@ blockquote {
     text-decoration: none;
 
     svg {
-      width: 1.6rem;
-      height: 1.6rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    i {
+      font-size: 3.2rem;
+      line-height: 1;
     }
 
     i::before {
