@@ -208,7 +208,7 @@
       {{ entrymonth }}{{ entryyear }}
     {%- endcapture %}
     <div class="periodical">
-      {{ periodical | strip }}{% if note_str != '' and is_award_note %} — {{ entry.booktitle | default: entry.abbr }} {{ note_str }}{% endif %}
+      {{ periodical | strip }}{% if note_str != '' and is_award_note %} — {{ note_str }}{% endif %}
     </div>
 
     <!-- Links/Buttons -->
