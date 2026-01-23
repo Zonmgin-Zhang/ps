@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-:tada: One paper got accepted in ACL 2025.
+:tada: One paper got accepted in ACL Main 2025.
 
