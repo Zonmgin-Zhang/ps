@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: First-year Ph.D. Student · Trustworthy AI (Security & Safety)
+subtitle:
 
 profile:
   align: right
