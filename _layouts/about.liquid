@@ -45,23 +45,15 @@ layout: default
         </div>
       {% endif %}
       <div class="clearfix bio-content">{{ content }}</div>
-      <!-- Refined sea-fishing scene at bottom-left of bio card -->
-      <svg class="section-doodle doodle-bio-man" aria-hidden="true" viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg">
-        <path class="accent" d="M6 77 C18 72, 30 82, 42 77 C54 72, 66 82, 78 77 C90 72, 102 82, 114 77 C120 74, 124 75, 128 77" fill="none" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="12" y1="62" x2="40" y2="62" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-        <line x1="18" y1="62" x2="16" y2="76" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
-        <line x1="34" y1="62" x2="32" y2="76" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
-        <circle cx="26" cy="18" r="7.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
-        <line x1="26" y1="25.5" x2="26" y2="48" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="26" y1="48" x2="20" y2="62" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="26" y1="48" x2="32" y2="62" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="26" y1="33" x2="16" y2="43" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="26" y1="33" x2="40" y2="28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M40 28 Q74 12 110 16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
-        <path class="accent" d="M110 16 Q116 32 110 52 Q108 61 108 66" fill="none" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M95 67 Q102 61 111 67 Q102 73 95 67 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M95 67 L88 62 L88 72 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="105" cy="66" r="1.1" fill="currentColor"/>
+      <!-- Subtle offshore line art for the bio card -->
+      <svg class="section-doodle doodle-bio" aria-hidden="true" viewBox="0 0 148 92" xmlns="http://www.w3.org/2000/svg">
+        <path class="accent" d="M7 72 C20 66, 33 78, 46 72 C59 66, 72 78, 85 72 C98 66, 111 78, 124 72 C132 68, 140 70, 145 73" fill="none"/>
+        <path d="M24 54 C49 24, 86 13, 126 20" fill="none"/>
+        <path class="fine" d="M126 20 C132 39, 121 50, 124 64" fill="none"/>
+        <path class="accent-fill" d="M120 64 L128 64 L124 75 Z"/>
+        <path d="M91 61 C99 54, 111 54, 120 62 C110 69, 99 69, 91 61 Z" fill="none"/>
+        <path d="M91 61 L82 55 L82 68 Z" fill="none"/>
+        <circle cx="112" cy="60" r="1.4" fill="currentColor"/>
       </svg>
     </section>
 
@@ -70,25 +62,16 @@ layout: default
       <section class="about-section about-section--news">
         <h2 class="about-section-title">News</h2>
         {% include news.liquid limit=true %}
-        <!-- Minimal pier, float, and jumping fish scene at bottom-right -->
-        <svg class="section-doodle doodle-news-man" aria-hidden="true" viewBox="0 0 118 88" xmlns="http://www.w3.org/2000/svg">
-          <line x1="18" y1="34" x2="54" y2="34" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-          <line x1="24" y1="34" x2="24" y2="49" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
-          <line x1="48" y1="34" x2="48" y2="49" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
-          <path class="accent" d="M12 77 C24 72, 36 82, 48 77 C60 72, 72 82, 84 77 C96 72, 106 82, 114 77" fill="none" stroke-width="1.8" stroke-linecap="round"/>
-          <path class="accent" d="M72 71 C76 68, 80 72, 84 71 C88 68, 92 72, 96 71" fill="none" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-          <path d="M78 26 Q92 18 104 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="104" y1="24" x2="104" y2="52" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="100" y1="44" x2="108" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle class="accent-fill" cx="104" cy="51" r="3.4"/>
-          <circle class="accent-fill" cx="104" cy="51" r="1.4"/>
-          <circle class="accent-ring" cx="104" cy="60" r="6"/>
-          <circle class="accent-ring" cx="104" cy="60" r="10"/>
-          <path d="M56 58 Q64 49 74 58 Q64 67 56 58 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M56 58 L49 53 L49 63 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="67" cy="57" r="1.1" fill="currentColor"/>
-          <path class="accent" d="M58 50 Q60 45 62 50" fill="none" stroke-width="1.3" stroke-linecap="round"/>
-          <path class="accent" d="M68 48 Q70 43 72 48" fill="none" stroke-width="1.3" stroke-linecap="round"/>
+        <!-- Compact lure and ripple motif for the news card -->
+        <svg class="section-doodle doodle-news" aria-hidden="true" viewBox="0 0 128 86" xmlns="http://www.w3.org/2000/svg">
+          <path class="accent" d="M12 68 C24 62, 36 74, 48 68 C60 62, 72 74, 84 68 C96 62, 108 74, 120 68" fill="none"/>
+          <path d="M90 17 C101 20, 110 29, 112 41" fill="none"/>
+          <path class="fine" d="M112 41 L112 54" fill="none"/>
+          <path class="accent-fill" d="M107 54 L117 54 L112 68 Z"/>
+          <circle class="accent-ring" cx="112" cy="68" r="9"/>
+          <path d="M28 45 C37 37, 50 37, 59 45 C50 53, 37 53, 28 45 Z" fill="none"/>
+          <path d="M28 45 L20 39 L20 51 Z" fill="none"/>
+          <circle cx="51" cy="44" r="1.2" fill="currentColor"/>
         </svg>
       </section>
     {% endif %}
@@ -107,22 +90,16 @@ layout: default
         <h2 class="about-section-title">Selected Publications</h2>
         <p class="post-description">* indicates equal contribution.</p>
         {% include selected_papers.liquid %}
-        <!-- Trophy catch scene at bottom-right -->
-        <svg class="section-doodle doodle-grad-man" aria-hidden="true" viewBox="0 0 120 92" xmlns="http://www.w3.org/2000/svg">
-          <path class="accent" d="M10 81 C22 76, 34 86, 46 81 C58 76, 70 86, 82 81 C94 76, 106 86, 116 81" fill="none" stroke-width="1.7" stroke-linecap="round"/>
-          <path d="M16 58 L30 58 L28 78 L18 78 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M18 58 Q23 53 28 58" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <circle cx="48" cy="18" r="7.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
-          <line x1="48" y1="25.5" x2="48" y2="50" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="48" y1="50" x2="40" y2="72" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="48" y1="50" x2="56" y2="72" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="48" y1="34" x2="30" y2="48" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="48" y1="34" x2="68" y2="22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M74 22 Q86 14 98 22 Q86 30 74 22 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M74 22 L66 16 L66 28 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-          <circle cx="89" cy="21" r="1.2" fill="currentColor"/>
-          <path class="accent" d="M100 14 Q106 8 112 14" fill="none" stroke-width="1.3" stroke-linecap="round"/>
-          <path class="accent" d="M104 22 Q110 16 116 22" fill="none" stroke-width="1.3" stroke-linecap="round"/>
+        <!-- Refined catch silhouette for the publications card -->
+        <svg class="section-doodle doodle-publications" aria-hidden="true" viewBox="0 0 132 88" xmlns="http://www.w3.org/2000/svg">
+          <path class="accent" d="M12 72 C25 66, 38 78, 51 72 C64 66, 77 78, 90 72 C103 66, 116 78, 128 72" fill="none"/>
+          <path d="M31 43 C45 29, 70 28, 88 43 C70 58, 45 58, 31 43 Z" fill="none"/>
+          <path d="M31 43 L18 33 L18 54 Z" fill="none"/>
+          <path class="fine" d="M53 32 C50 38, 50 48, 54 54" fill="none"/>
+          <path class="fine" d="M77 33 C73 39, 73 48, 78 54" fill="none"/>
+          <circle cx="77" cy="41" r="1.6" fill="currentColor"/>
+          <path class="accent" d="M90 32 C101 23, 113 24, 121 33" fill="none"/>
+          <path class="accent" d="M91 54 C103 62, 115 60, 123 50" fill="none"/>
         </svg>
       </section>
     {% endif %}
