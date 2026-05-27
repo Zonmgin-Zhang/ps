@@ -163,7 +163,6 @@ blockquote {
   position: relative;
 }
 
-
 .about-article {
   display: flex;
   flex-direction: column;
@@ -203,7 +202,7 @@ blockquote {
 // Bio card: sea-fishing stickman at bottom-left
 .doodle-bio-man {
   width: 88px;
-  bottom: 4.5rem;  // one stickman height up from card base
+  bottom: 4.5rem; // one stickman height up from card base
   left: 8px;
   animation: doodle-bob 5.2s ease-in-out infinite;
 }
@@ -227,14 +226,21 @@ blockquote {
 }
 
 @keyframes doodle-bob {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @media (max-width: 575.98px) {
   .doodle-bio-man,
   .doodle-news-man,
-  .doodle-grad-man { width: 60px; }
+  .doodle-grad-man {
+    width: 60px;
+  }
 }
 
 .about-section {
@@ -242,7 +248,7 @@ blockquote {
   background: var(--global-card-bg-color);
   border: 1px solid var(--global-divider-color);
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
@@ -250,7 +256,7 @@ blockquote {
 
   // 微妙的顶部装饰线
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 10%;
@@ -262,7 +268,7 @@ blockquote {
 }
 
 .about-section--bio {
-  padding: 1.5rem;   // uniform padding, no extra bottom space
+  padding: 1.5rem; // uniform padding, no extra bottom space
   border-left: 3px solid var(--global-theme-color);
 
   .bio-content {
@@ -366,7 +372,7 @@ blockquote {
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -434,7 +440,7 @@ blockquote {
 
     // 微妙的文字装饰
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -8px;
       left: 50%;
@@ -584,6 +590,19 @@ ul.task-list input[type="checkbox"] {
 .profile {
   width: 100%;
 
+  &.fishing-profile {
+    img {
+      border: 1px solid rgba(16, 95, 128, 0.28);
+      box-shadow: 0 18px 45px rgba(8, 49, 77, 0.2);
+      object-fit: cover;
+    }
+
+    .more-info {
+      border-left: 3px solid #18a3c8;
+      padding-left: 0.75rem;
+    }
+  }
+
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
@@ -593,6 +612,70 @@ ul.task-list input[type="checkbox"] {
       display: inline-block;
       margin: 0;
     }
+  }
+}
+
+.angling-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem 0 1.75rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(24, 163, 200, 0.25);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(255, 96, 40, 0.22), transparent 26%),
+    linear-gradient(135deg, rgba(8, 64, 93, 0.12), rgba(21, 150, 184, 0.08) 52%, rgba(255, 255, 255, 0));
+  box-shadow: 0 14px 35px rgba(8, 49, 77, 0.08);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -36px;
+    bottom: -28px;
+    width: 150px;
+    height: 84px;
+    border: 2px solid rgba(24, 163, 200, 0.22);
+    border-color: rgba(24, 163, 200, 0.22) transparent transparent transparent;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+  }
+
+  h2 {
+    margin: 0.35rem 0 0.75rem;
+    color: var(--global-text-color);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.angling-kicker {
+  display: inline-block;
+  color: #147b95;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.angling-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(24, 163, 200, 0.3);
+    border-radius: 999px;
+    background: rgba(24, 163, 200, 0.1);
+    color: var(--global-text-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.28rem 0.68rem;
   }
 }
 
