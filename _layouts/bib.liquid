@@ -8,20 +8,6 @@
     {%- assign is_award_note = true -%}
   {%- endif -%}
 
-  {%- comment -%} Primary link used to make the whole entry clickable {%- endcomment -%}
-  {%- assign paper_url = '' -%}
-  {%- if entry.arxiv -%}
-    {%- assign paper_url = entry.arxiv | prepend: 'https://arxiv.org/abs/' -%}
-  {%- elsif entry.html -%}
-    {%- assign paper_url = entry.html -%}
-  {%- elsif entry.doi -%}
-    {%- assign paper_url = entry.doi | prepend: 'https://doi.org/' -%}
-  {%- elsif entry.pdf and entry.pdf contains '://' -%}
-    {%- assign paper_url = entry.pdf -%}
-  {%- elsif entry.website -%}
-    {%- assign paper_url = entry.website -%}
-  {%- endif -%}
-
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
@@ -76,13 +62,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div
-    id="{{ entry.key }}"
-    class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}"
-    {% if paper_url != '' %}
-      data-paper-url="{{ paper_url }}"
-    {% endif %}
-  >
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->

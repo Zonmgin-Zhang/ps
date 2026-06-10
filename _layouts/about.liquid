@@ -120,23 +120,3 @@ layout: default
     {% endif %}
   </article>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var items = document.querySelectorAll('.about-section--publications ol.bibliography > li');
-    items.forEach(function (li) {
-      var holder = li.querySelector('[data-paper-url]');
-      var url = holder ? holder.getAttribute('data-paper-url') : '';
-      if (!url) {
-        return;
-      }
-      li.classList.add('pub-clickable');
-      li.addEventListener('click', function (event) {
-        if (event.target.closest('a, button, .more-authors, abbr, [data-toggle], [onclick]')) {
-          return;
-        }
-        window.open(url, '_blank', 'noopener');
-      });
-    });
-  });
-</script>

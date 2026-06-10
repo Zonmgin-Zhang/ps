@@ -385,25 +385,13 @@ blockquote {
         margin-bottom: 0;
       }
 
-      // 可点击的论文长方块
-      &.pub-clickable {
-        cursor: pointer;
-      }
-
-      &.pub-clickable:hover {
+      // 鼠标悬停时论文块凸起
+      &:hover {
         transform: translateY(-5px);
         border-color: var(--global-theme-color);
         box-shadow:
           0 14px 30px rgba(0, 0, 0, 0.13),
           0 5px 12px rgba(0, 0, 0, 0.07);
-      }
-
-      // 块内已有的链接/按钮保持独立可点击
-      a,
-      .more-authors,
-      abbr {
-        position: relative;
-        z-index: 1;
       }
     }
   }
@@ -413,7 +401,7 @@ blockquote {
   .about-section--publications ol.bibliography li {
     transition: none;
 
-    &.pub-clickable:hover {
+    &:hover {
       transform: none;
     }
   }
