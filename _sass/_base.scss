@@ -252,10 +252,6 @@ blockquote {
     0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: visible;
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    border-color 0.28s ease;
 
   // 微妙的顶部装饰线
   &::before {
@@ -267,25 +263,6 @@ blockquote {
     height: 2px;
     background: linear-gradient(90deg, transparent 0%, var(--global-theme-color) 50%, transparent 100%);
     opacity: 0.2;
-  }
-
-  // 鼠标悬停时整块凸起
-  &:hover {
-    transform: translateY(-6px);
-    border-color: var(--global-theme-color);
-    box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.14),
-      0 6px 14px rgba(0, 0, 0, 0.08);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-section {
-    transition: none;
-
-    &:hover {
-      transform: none;
-    }
   }
 }
 
