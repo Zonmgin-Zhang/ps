@@ -252,6 +252,10 @@ blockquote {
     0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: visible;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 
   // 微妙的顶部装饰线
   &::before {
@@ -263,6 +267,25 @@ blockquote {
     height: 2px;
     background: linear-gradient(90deg, transparent 0%, var(--global-theme-color) 50%, transparent 100%);
     opacity: 0.2;
+  }
+
+  // 鼠标悬停时整块凸起
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--global-theme-color);
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.14),
+      0 6px 14px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
@@ -348,14 +371,50 @@ blockquote {
     margin-bottom: 0;
 
     li {
-      margin-bottom: 1.35rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--global-divider-color);
+      margin-bottom: 0.85rem;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 10px;
+      background: var(--global-card-bg-color);
+      transition:
+        transform 0.24s ease,
+        box-shadow 0.24s ease,
+        border-color 0.24s ease;
 
       &:last-child {
         margin-bottom: 0;
-        border-bottom: none;
       }
+
+      // 可点击的论文长方块
+      &.pub-clickable {
+        cursor: pointer;
+      }
+
+      &.pub-clickable:hover {
+        transform: translateY(-5px);
+        border-color: var(--global-theme-color);
+        box-shadow:
+          0 14px 30px rgba(0, 0, 0, 0.13),
+          0 5px 12px rgba(0, 0, 0, 0.07);
+      }
+
+      // 块内已有的链接/按钮保持独立可点击
+      a,
+      .more-authors,
+      abbr {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section--publications ol.bibliography li {
+    transition: none;
+
+    &.pub-clickable:hover {
+      transform: none;
     }
   }
 }

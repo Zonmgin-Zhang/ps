@@ -29,7 +29,7 @@ latest_posts:
 
 <div class="academic-bio-card">
   <p>
-    Hello! I am a <strong>first-year Ph.D. student</strong> in Data Science and Analytics at The Hong Kong University of Science and Technology (Guangzhou), advised by <strong><a href="https://xinleihe.github.io/">Prof. Xinlei He</a></strong>.
+    Hello! I am a <strong>first-year Ph.D. student</strong> in Data Science and Analytics at The Hong Kong University of Science and Technology (Guangzhou), advised by <strong><a href="https://xinleihe.github.io/">Prof. Xinlei He</a></strong> and <strong><a href="https://sites.google.com/ucsc.edu/jiahengwei">Prof. Jiaheng Wei</a></strong>.
   </p>
   <p>
     My research interests are in <strong>AI security & privacy</strong>, with a focus on <strong>vision segmentation models</strong>, <strong>LLMs/VLLMs</strong>, and <strong>image watermarking</strong>. In particular, I study <strong>backdoor attacks</strong> and <strong>jailbreaking</strong> of modern foundation models, as well as <strong>attack/defense</strong> for image watermarking systems.
