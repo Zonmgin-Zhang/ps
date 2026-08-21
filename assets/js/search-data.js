@@ -3,25 +3,45 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "About",
+    id: "nav-home",
+    title: "Home",
     section: "Navigation",
     handler: () => {
       window.location.href = "/ps/";
     },
-  },{id: "books-the-godfather",
+  },{id: "nav-publications",
+          title: "Publications",
+          description: "Peer-reviewed papers and preprints in trustworthy AI, security, and multimodal learning.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ps/publications/";
+          },
+        },{id: "nav-news",
+          title: "News",
+          description: "Research updates, paper acceptances, and academic milestones.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ps/news/";
+          },
+        },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/ps/books/the_godfather/";
-            },},{id: "news-tada-one-paper-got-accepted-in-acl-main-2025",
-          title: ':tada: One paper got accepted in ACL Main 2025.',
+            },},{id: "news-our-paper-on-ai-generated-text-in-social-media-was-accepted-to-acl-2025-main",
+          title: 'Our paper on AI-generated text in social media was accepted to ACL 2025...',
           description: "",
-          section: "News",},{id: "news-tada-one-paper-fc-attack-has-been-accepted-to-emnlp-2025-findings",
-          title: ':tada: One paper FC-Attack has been accepted to EMNLP 2025 (Findings).',
+          section: "News",},{id: "news-our-paper-fc-attack-was-accepted-to-emnlp-2025-findings",
+          title: 'Our paper FC-Attack was accepted to EMNLP 2025 Findings.',
           description: "",
-          section: "News",},{id: "news-tada-one-paper-6dattack-has-been-accepted-to-aaai-2026-oral",
-          title: ':tada: One paper 6DAttack has been accepted to AAAI 2026 (Oral).',
+          section: "News",},{id: "news-our-paper-chasm-was-accepted-to-neurips-2025",
+          title: 'Our paper CHASM was accepted to NeurIPS 2025.',
+          description: "",
+          section: "News",},{id: "news-our-paper-6dattack-was-accepted-to-aaai-2026-as-an-oral-presentation",
+          title: 'Our paper 6DAttack was accepted to AAAI 2026 as an Oral presentation.',
+          description: "",
+          section: "News",},{id: "news-our-paper-mars-was-accepted-to-ndss-2027",
+          title: 'Our paper MARS was accepted to NDSS 2027.',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
@@ -79,13 +99,6 @@ ninja.data = [{
           section: "Teachings",handler: () => {
               window.location.href = "/ps/teachings/introduction-to-machine-learning/";
             },},{
-        id: 'social-cv',
-        title: 'CV',
-        section: 'Socials',
-        handler: () => {
-          window.open("/ps/assets/pdf/Zongmin_s_Resume.pdf", "_blank");
-        },
-      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
@@ -98,6 +111,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=tqpfjvAAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/Zonmgin-Zhang", "_blank");
         },
       },{
       id: 'light-theme',
