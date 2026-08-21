@@ -20,7 +20,22 @@
         {%- if note_str != '' and is_award_note == false -%}
           {%- assign badge_label = badge_label | append: ' ' | append: note_str -%}
         {%- endif -%}
-        {%- if site.data.venues[entry.abbr] -%}
+        {%- assign venue_icon = null -%}
+        {%- if site.data.venues[entry.abbr] and site.data.venues[entry.abbr].icon -%}
+          {%- assign venue_icon = site.data.venues[entry.abbr].icon -%}
+        {%- endif -%}
+        {%- if venue_icon -%}
+          <div class="venue-mark">
+            {% if site.data.venues[entry.abbr].url %}
+              <a href="{{ site.data.venues[entry.abbr].url }}" class="venue-icon-link" aria-label="{{ badge_label }}">
+                <img class="venue-icon" src="{{ venue_icon | relative_url }}" alt="{{ entry.abbr }}">
+              </a>
+            {% else %}
+              <img class="venue-icon" src="{{ venue_icon | relative_url }}" alt="{{ entry.abbr }}">
+            {% endif %}
+            <span class="venue-label">{{ badge_label }}</span>
+          </div>
+        {%- elsif site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
@@ -62,7 +77,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-10{% else %}col-sm-12{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->

@@ -166,109 +166,24 @@ blockquote {
 .about-article {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
 }
 
-/*******************************************************************************
- * About page line art
- ******************************************************************************/
-
-.section-doodle {
-  position: absolute;
-  pointer-events: none;
-  color: var(--global-text-color);
-  opacity: 0.28;
-
-  path,
-  line,
-  circle {
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-}
-
-.section-doodle .accent {
-  stroke: var(--global-theme-color);
-  stroke-width: 1.7;
-  opacity: 0.85;
-}
-
-.section-doodle .accent-fill {
-  fill: var(--global-theme-color);
-  opacity: 0.72;
-  stroke: none;
-}
-
-.section-doodle .accent-ring {
-  fill: none;
-  stroke: var(--global-theme-color);
-  opacity: 0.5;
-  stroke-width: 1.3;
-}
-
-.section-doodle .fine {
-  stroke-width: 1.15;
-  opacity: 0.65;
-}
-
-.doodle-bio {
-  width: 116px;
-  right: 1rem;
-  bottom: 0.65rem;
-}
-
-.doodle-news {
-  width: 92px;
-  right: 1rem;
-  bottom: 0.6rem;
-}
-
-.doodle-publications {
-  width: 100px;
-  right: 1rem;
-  bottom: 0.6rem;
-}
-
-@media (max-width: 575.98px) {
-  .doodle-bio,
-  .doodle-news,
-  .doodle-publications {
-    width: 72px;
-    opacity: 0.18;
-  }
-}
-
 .about-section {
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem 2rem;
   background: var(--global-card-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 12px;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(13, 50, 73, 0.06);
   position: relative;
   overflow: visible;
-
-  // 微妙的顶部装饰线
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, var(--global-theme-color) 50%, transparent 100%);
-    opacity: 0.2;
-  }
+  scroll-margin-top: 5rem;
 }
 
 .about-section--bio {
-  padding: 1.5rem; // uniform padding, no extra bottom space
-  border-left: 3px solid var(--global-theme-color);
+  border-top: 3px solid var(--global-theme-color);
 
   .bio-content {
     p {
@@ -282,15 +197,15 @@ blockquote {
   }
 }
 
-.about-section--news {
-  border-left: 3px solid #f0c040;
-  padding-bottom: 1.5rem;
-
+.about-section--news,
+.news-page {
   .news {
-    margin-top: 0.5rem;
-    max-height: 320px;
-    overflow-y: auto;
-    padding-right: 0.5rem;
+    margin-top: 0.25rem;
+    padding-right: 0;
+
+    .news-extra {
+      display: none;
+    }
 
     // Custom scrollbar styling
     &::-webkit-scrollbar {
@@ -318,24 +233,45 @@ blockquote {
 
     .table {
       margin-bottom: 0;
+      border-collapse: separate;
+      border-spacing: 0;
 
       th {
-        font-weight: 500;
-        color: var(--global-text-color-light);
+        width: 6.5rem;
+        padding: 0.9rem 1rem 0.9rem 0;
+        color: var(--global-theme-color);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
         white-space: nowrap;
-        padding-right: 1.25rem;
       }
 
       td {
+        padding: 0.9rem 0;
         line-height: 1.6;
+      }
+
+      tr:not(:last-child) {
+        th,
+        td {
+          border-bottom: 1px solid var(--global-divider-color);
+        }
       }
     }
   }
 }
 
+.news-page {
+  .news {
+    max-height: none;
+    padding-right: 0;
+  }
+}
+
 .about-section--publications {
-  border-left: 3px solid #5cb85c;
-  padding-bottom: 1.5rem;
+  .about-section-title {
+    margin-bottom: 0.85rem;
+  }
 
   .post-description {
     margin-bottom: 1rem;
@@ -349,9 +285,9 @@ blockquote {
 
     li {
       margin-bottom: 0.85rem;
-      padding: 0.95rem 1.1rem;
+      padding: 1.1rem 1.15rem;
       border: 1px solid var(--global-divider-color);
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--global-card-bg-color);
       transition:
         transform 0.24s ease,
@@ -362,13 +298,67 @@ blockquote {
         margin-bottom: 0;
       }
 
-      // 鼠标悬停时论文块凸起
       &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-4px);
         border-color: var(--global-theme-color);
-        box-shadow:
-          0 14px 30px rgba(0, 0, 0, 0.13),
-          0 5px 12px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 12px 28px rgba(13, 50, 73, 0.12);
+      }
+
+      > .row {
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+
+        > [class*="col"] {
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+        }
+      }
+
+      .title {
+        margin-bottom: 0.25rem;
+        font-size: 1.02rem;
+        line-height: 1.45;
+      }
+
+      .venue-mark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+        text-align: center;
+      }
+
+      .venue-icon-link {
+        display: block;
+        width: 100%;
+        max-width: 72px;
+      }
+
+      .venue-icon {
+        display: block;
+        width: 100%;
+        max-width: 72px;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(13, 50, 73, 0.12);
+      }
+
+      .venue-label {
+        color: var(--global-theme-color);
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .author,
+      .periodical {
+        color: var(--global-text-color-light);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .links {
+        margin-top: 0.55rem;
       }
     }
   }
@@ -384,47 +374,74 @@ blockquote {
   }
 }
 
-.about-section-title {
-  margin: 0 0 0.85rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--global-theme-color);
-  display: inline-block;
-  letter-spacing: -0.3px;
-  position: relative;
+.about-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--global-theme-color) 0%, var(--global-hover-color) 70%, transparent 100%);
-    border-radius: 2px;
+.about-section-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  letter-spacing: -0.02em;
+}
+
+.section-link {
+  flex-shrink: 0;
+  color: var(--global-theme-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:hover {
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      transform: translateX(2px);
+    }
   }
 }
 
 .about-social-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.45rem;
   align-items: center;
-  margin: 0.5rem 0 1rem;
+  margin: 0.75rem 0 0;
 
   a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 50%;
     text-decoration: none;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
 
     svg {
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0;
     }
 
     i {
-      font-size: 2.25rem;
+      font-size: 1.15rem;
       line-height: 1;
     }
 
@@ -434,6 +451,10 @@ blockquote {
     }
 
     &:hover {
+      border-color: var(--global-theme-color);
+      background-color: rgba(74, 158, 218, 0.08);
+      text-decoration: none;
+
       i::before {
         color: var(--global-theme-color);
       }
@@ -443,42 +464,27 @@ blockquote {
 
 .about-social-icons--profile {
   justify-content: center;
-  margin: 0.35rem 0 0;
+  margin-top: 0.75rem;
 }
 
 // About page header styling
 .post > .post-header {
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin-bottom: 1.35rem;
+  text-align: left;
   position: relative;
   z-index: 1;
 
   .post-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 0.35rem;
-    letter-spacing: -0.5px;
-    position: relative;
-    display: inline-block;
-
-    // 微妙的文字装饰
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--global-theme-color), transparent);
-      border-radius: 2px;
-      opacity: 0.4;
-    }
+    font-size: clamp(2.15rem, 5vw, 2.75rem);
+    font-weight: 750;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.04em;
   }
 
   .desc {
     color: var(--global-text-color-light);
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
     margin: 0;
   }
 }
@@ -490,15 +496,19 @@ blockquote {
 
     .more-info {
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--global-text-color-light);
       word-break: break-word;
       overflow-wrap: break-word;
-      line-height: 1.5;
-      padding: 0 0.25rem;
+      line-height: 1.55;
 
       p {
-        margin: 0;
+        margin: 0.15rem 0;
+      }
+
+      i {
+        width: 1rem;
+        color: var(--global-theme-color);
       }
     }
   }
@@ -523,20 +533,33 @@ blockquote {
       margin: 0 auto 1rem;
 
       figure {
-        max-width: 120px;
+        max-width: 280px;
         margin: 0 auto;
       }
 
       .more-info {
-        font-size: 0.7rem;
+        font-size: 0.78rem;
       }
     }
   }
 
+  .research-focus {
+    grid-template-columns: 1fr;
+  }
+
   .about-section--news {
     .news {
-      max-height: 250px;
+      .table {
+        th {
+          width: 5.4rem;
+          padding-right: 0.65rem;
+        }
+      }
     }
+  }
+
+  .about-section-heading {
+    align-items: center;
   }
 
   .about-section-title {
@@ -545,7 +568,7 @@ blockquote {
 
   .post > .post-header {
     .post-title {
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
   }
 }
@@ -615,49 +638,32 @@ ul.task-list input[type="checkbox"] {
 
   &.fishing-profile {
     img {
-      border: 1px solid rgba(16, 95, 128, 0.28);
-      box-shadow: 0 18px 45px rgba(8, 49, 77, 0.2);
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(13, 50, 73, 0.14);
       object-fit: cover;
     }
 
     .more-info {
-      border-left: 3px solid #18a3c8;
-      padding-left: 0.75rem;
+      padding: 0;
     }
   }
 
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: monospace;
+    font-family: inherit;
 
     p {
-      display: inline-block;
-      margin: 0;
+      display: block;
+      margin: 0.15rem 0;
     }
   }
 }
 
 .academic-bio-card {
-  position: relative;
-  overflow: hidden;
-  margin: 0.35rem 0 0;
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(24, 163, 200, 0.08), transparent 38%), var(--global-card-bg-color);
-
-  &::after {
-    content: "";
-    position: absolute;
-    right: -34px;
-    bottom: -42px;
-    width: 128px;
-    height: 92px;
-    border: 1px solid rgba(24, 163, 200, 0.18);
-    border-color: rgba(24, 163, 200, 0.18) transparent transparent transparent;
-    border-radius: 50%;
-  }
+  margin: 0;
 
   p {
     margin-bottom: 0.85rem;
@@ -666,10 +672,49 @@ ul.task-list input[type="checkbox"] {
       margin-bottom: 0;
     }
   }
+
+  .bio-lead {
+    font-size: 1.03rem;
+    line-height: 1.75;
+  }
+}
+
+.research-focus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  clear: both;
+  padding-top: 1.25rem;
+}
+
+.research-focus-item {
+  padding: 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  background: rgba(74, 158, 218, 0.045);
+
+  > i {
+    margin-bottom: 0.65rem;
+    color: var(--global-theme-color);
+    font-size: 1.15rem;
+  }
+
+  h3 {
+    margin-bottom: 0.4rem;
+    font-size: 0.94rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
 }
 
 .profile.float-right {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .profile.float-left {
@@ -690,7 +735,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile.profile-about {
-    width: 15%;
+    width: 27%;
   }
 }
 
@@ -1212,12 +1257,44 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 12px;
+      background: var(--global-card-bg-color);
 
       .preview {
       }
 
       .abbr {
         margin-bottom: 0.5rem;
+
+        .venue-mark {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.35rem;
+          text-align: center;
+        }
+
+        .venue-icon-link,
+        .venue-icon {
+          display: block;
+          width: 100%;
+          max-width: 72px;
+        }
+
+        .venue-icon {
+          height: auto;
+          border-radius: 14px;
+          box-shadow: 0 4px 12px rgba(13, 50, 73, 0.12);
+        }
+
+        .venue-label {
+          color: var(--global-theme-color);
+          font-size: 0.72rem;
+          font-weight: 700;
+          line-height: 1.2;
+        }
 
         abbr {
           display: inline-block;
@@ -1241,10 +1318,17 @@ footer.sticky-bottom {
       }
 
       .title {
-        font-weight: bolder;
+        margin-bottom: 0.25rem;
+        font-size: 1.02rem;
+        font-weight: 700;
+        line-height: 1.45;
       }
 
       .author {
+        color: var(--global-text-color-light);
+        font-size: 0.88rem;
+        line-height: 1.55;
+
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 
@@ -1271,15 +1355,22 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical {
+        color: var(--global-text-color-light);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
       .links {
+        margin-top: 0.55rem;
+
         a.btn {
+          border-radius: 999px;
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding: 0.2rem 0.75rem;
           margin-left: 0;
+          font-size: 0.78rem;
 
           &:hover {
             color: var(--global-theme-color);

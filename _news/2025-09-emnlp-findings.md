@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-:tada: One paper FC-Attack has been accepted to EMNLP 2025 (Findings).
-
+Our paper **FC-Attack** was accepted to **EMNLP 2025 Findings**.

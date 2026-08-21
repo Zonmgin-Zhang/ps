@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-:tada: One paper got accepted in ACL Main 2025.
-
+Our paper on AI-generated text in social media was accepted to **ACL 2025 Main**.

@@ -7,3 +7,39 @@
 
 "Vision":
   color: "#009f36"
+
+"NDSS":
+  url: https://www.ndss-symposium.org/
+  icon: /assets/img/venues/ndss.svg
+
+"AAAI":
+  url: https://aaai.org/conference/aaai/
+  icon: /assets/img/venues/aaai.svg
+
+"ACL":
+  url: https://aclanthology.org/
+  icon: /assets/img/venues/acl.svg
+
+"EMNLP":
+  url: https://aclanthology.org/venues/emnlp/
+  icon: /assets/img/venues/emnlp.svg
+
+"NeurIPS":
+  url: https://neurips.cc/
+  icon: /assets/img/venues/neurips.svg
+
+"arXiv":
+  url: https://arxiv.org/
+  icon: /assets/img/venues/arxiv.svg
+
+"SocialMeta":
+  url: https://dl.acm.org/doi/10.1145/3698387.3700001
+  icon: /assets/img/venues/socialmeta.svg
+
+"IROS":
+  url: https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros
+  icon: /assets/img/venues/iros.svg
+
+"ISBI":
+  url: https://biomedicalimaging.org/
+  icon: /assets/img/venues/isbi.svg
